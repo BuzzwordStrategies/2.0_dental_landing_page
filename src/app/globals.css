@@ -4,6 +4,7 @@
 
 /* Import custom animations */
 @import '../styles/animations.css';
+@import '../styles/glassmorphism.css';
 
 @layer base {
   html {

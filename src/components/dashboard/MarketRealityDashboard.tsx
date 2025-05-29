@@ -4,6 +4,8 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import IndustryCounter from './IndustryCounter';
+import { GlassCard } from '../ui/GlassCard';
+import { MeshGradient } from '../ui/MeshGradient';
 import { industryStatistics, industryTrends } from '../../constants/industryData';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -47,9 +49,16 @@ export default function MarketRealityDashboard() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 px-4 bg-gray-900 relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
+    <section ref={sectionRef} className="py-20 px-4 relative overflow-hidden">
+      {/* Add mesh gradient background */}
+      <MeshGradient 
+        colors={['#F59E0B', '#DC2626', '#7C3AED', '#0EA5E9']}
+        speed={0.3}
+        className="z-0"
+      />
+      
+      {/* Existing background pattern with adjusted z-index */}
+      <div className="absolute inset-0 opacity-5 z-1">
         <div className="absolute inset-0" style={{
           backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px)`
         }} />
@@ -63,10 +72,16 @@ export default function MarketRealityDashboard() {
           Live industry data shows the accelerating consolidation and digital transformation reshaping dental labs
         </p>
 
-        {/* Main statistics grid */}
+        {/* Main statistics grid with GlassCard */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {/* Dental Labs Decline */}
-          <div className="stat-card bg-gray-800 rounded-xl p-8 border border-gray-700 hover:border-yellow-500/50 transition-all duration-300">
+          <GlassCard 
+            className="stat-card p-8" 
+            intensity={0.8} 
+            layers={3}
+            interactive={true}
+            colorShift={true}
+          >
             <h3 className="text-yellow-500 font-semibold mb-6 text-center">DENTAL LABS CLOSING</h3>
             <div className="space-y-4">
               <IndustryCounter
@@ -81,17 +96,23 @@ export default function MarketRealityDashboard() {
                 endValue={industryStatistics.dentalLabs.current}
                 className="mb-4"
               />
-              <div className="text-center pt-4 border-t border-gray-700">
+              <div className="text-center pt-4 border-t border-gray-700/50">
                 <div className="text-red-500 font-bold text-2xl mb-1">
                   {industryTrends.labsClosing.rate}
                 </div>
                 <div className="text-sm text-gray-400">Closing Rate</div>
               </div>
             </div>
-          </div>
+          </GlassCard>
 
           {/* Workforce Crisis */}
-          <div className="stat-card bg-gray-800 rounded-xl p-8 border border-gray-700 hover:border-yellow-500/50 transition-all duration-300">
+          <GlassCard 
+            className="stat-card p-8" 
+            intensity={0.8} 
+            layers={3}
+            interactive={true}
+            colorShift={true}
+          >
             <h3 className="text-yellow-500 font-semibold mb-6 text-center">WORKFORCE CRISIS</h3>
             <div className="space-y-4">
               <IndustryCounter
@@ -108,17 +129,23 @@ export default function MarketRealityDashboard() {
                 suffix="%"
                 className="mb-4"
               />
-              <div className="text-center pt-4 border-t border-gray-700">
+              <div className="text-center pt-4 border-t border-gray-700/50">
                 <div className="text-orange-500 font-bold text-xl mb-1">
                   {industryStatistics.workforce.shortageSeverity}
                 </div>
                 <div className="text-sm text-gray-400">Current Shortage</div>
               </div>
             </div>
-          </div>
+          </GlassCard>
 
           {/* Market Control */}
-          <div className="stat-card bg-gray-800 rounded-xl p-8 border border-gray-700 hover:border-yellow-500/50 transition-all duration-300">
+          <GlassCard 
+            className="stat-card p-8" 
+            intensity={0.8} 
+            layers={3}
+            interactive={true}
+            colorShift={true}
+          >
             <h3 className="text-yellow-500 font-semibold mb-6 text-center">MARKET TAKEOVER</h3>
             <div className="space-y-4">
               <IndustryCounter
@@ -135,18 +162,24 @@ export default function MarketRealityDashboard() {
                 suffix="%"
                 className="mb-4"
               />
-              <div className="text-center pt-4 border-t border-gray-700">
+              <div className="text-center pt-4 border-t border-gray-700/50">
                 <div className="text-purple-500 font-bold text-2xl mb-1">
                   {industryStatistics.marketShare.projectedCombined2030}%
                 </div>
                 <div className="text-sm text-gray-400">Combined by 2030</div>
               </div>
             </div>
-          </div>
+          </GlassCard>
         </div>
 
-        {/* Digital adoption comparison */}
-        <div className="bg-gray-800/50 rounded-xl p-8 border border-gray-700">
+        {/* Digital adoption comparison with GlassCard */}
+        <GlassCard 
+          className="p-8" 
+          intensity={0.6} 
+          layers={2}
+          interactive={true}
+          colorShift={true}
+        >
           <h3 className="text-xl font-semibold text-white mb-6 text-center">
             Digital Marketing Adoption Gap
           </h3>
@@ -176,7 +209,7 @@ export default function MarketRealityDashboard() {
               <div className="text-sm text-gray-400">Dental Labs<br/>Investing in SEO</div>
             </div>
           </div>
-        </div>
+        </GlassCard>
 
         {/* Source citation */}
         <div className="text-center mt-8">
