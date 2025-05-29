@@ -3,10 +3,20 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import dynamic from 'next/dynamic';
 import IndustryCounter from './IndustryCounter';
 import { GlassCard } from '../ui/GlassCard';
 import { MeshGradient } from '../ui/MeshGradient';
 import { industryStatistics, industryTrends } from '../../constants/industryData';
+
+// Dynamic import for physics counter
+const PhysicsIndustryCounter = dynamic(
+  () => import('./PhysicsIndustryCounter'),
+  { 
+    ssr: false,
+    loading: () => <div className="h-[600px] animate-pulse bg-gray-800 rounded-lg" />
+  }
+);
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -172,9 +182,12 @@ export default function MarketRealityDashboard() {
           </GlassCard>
         </div>
 
+        {/* Physics-based industry visualization */}
+        <PhysicsIndustryCounter />
+
         {/* Digital adoption comparison with GlassCard */}
         <GlassCard 
-          className="p-8" 
+          className="p-8 mt-16" 
           intensity={0.6} 
           layers={2}
           interactive={true}
