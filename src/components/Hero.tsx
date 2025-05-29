@@ -74,11 +74,11 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
           >
-            While You're Reading This,{' '}
+            While Others Struggle,{' '}
             <span className="text-amber-400 drop-shadow-[0_0_30px_rgba(251,191,36,0.5)]">
-              Another Lab Just Lost
+              Forward-Thinking Labs
             </span>{' '}
-            a 20-Year Client to Offshore Pricing
+            Are Capturing Record Market Share
           </motion.h1>
 
           {/* Subheadline */}
@@ -88,8 +88,7 @@ export default function Hero() {
             transition={{ delay: 0.6 }}
             className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8"
           >
-            22% of dental labs have closed since 2004. Here's how to ensure
-            yours isn't next.
+            Smart lab owners are using digital strategies to command premium prices and expand their client base.
           </motion.p>
 
           {/* Scroll indicator with pulse */}
@@ -99,7 +98,7 @@ export default function Hero() {
             transition={{ delay: 1.5 }}
             className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
           >
-            <p className="text-amber-400 text-sm mb-2">Scroll to watch the dissolution</p>
+            <p className="text-amber-400 text-sm mb-2">Scroll to discover your growth opportunities</p>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 2 }}

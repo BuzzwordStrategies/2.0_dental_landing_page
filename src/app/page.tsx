@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import FloatingCTAs from '../components/FloatingCTAs';
 import MarketRealityDashboard from '../components/dashboard/MarketRealityDashboard';
 import DigitalTransformationSection from '../components/landing/DigitalTransformationSection';
+import SuccessBuilder3D from '../components/growth/SuccessBuilder3D';
 import GoalSelector from '../components/landing/GoalSelector';
 import BundleRecommender from '../components/landing/BundleRecommender';
 import { SubscriptionSlider } from '../components/SubscriptionSlider';
@@ -22,8 +23,11 @@ export default function Home() {
       <FloatingCTAs />
       <MarketRealityDashboard />
       
-      {/* New Digital Transformation Section */}
+      {/* Digital Transformation Section */}
       <DigitalTransformationSection />
+      
+      {/* 3D Success Builder */}
+      <SuccessBuilder3D />
       
       <GoalSelector 
         onGoalSelect={handleGoalSelect}
@@ -43,11 +47,11 @@ export default function Home() {
       
       {/* Placeholder sections for smooth scrolling */}
       <div id="seo-audit" className="min-h-screen bg-gray-100 p-20">
-        <h2 className="text-3xl font-bold text-center">SEO Audit Section (Phase 11)</h2>
+        <h2 className="text-3xl font-bold text-center">SEO Audit Section (Phase 12)</h2>
       </div>
       
       <div id="blog-generator" className="min-h-screen bg-gray-200 p-20">
-        <h2 className="text-3xl font-bold text-center">Blog Generator Section (Phase 12)</h2>
+        <h2 className="text-3xl font-bold text-center">Blog Generator Section (Phase 13)</h2>
       </div>
     </>
   );
