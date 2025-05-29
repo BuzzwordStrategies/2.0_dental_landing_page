@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Hero from '../components/Hero';
 import FloatingCTAs from '../components/FloatingCTAs';
 import MarketRealityDashboard from '../components/dashboard/MarketRealityDashboard';
+import DigitalTransformationSection from '../components/landing/DigitalTransformationSection';
 import GoalSelector from '../components/landing/GoalSelector';
 import BundleRecommender from '../components/landing/BundleRecommender';
 import { SubscriptionSlider } from '../components/SubscriptionSlider';
@@ -20,6 +21,10 @@ export default function Home() {
       <Hero />
       <FloatingCTAs />
       <MarketRealityDashboard />
+      
+      {/* New Digital Transformation Section */}
+      <DigitalTransformationSection />
+      
       <GoalSelector 
         onGoalSelect={handleGoalSelect}
         selectedGoal={selectedGoal}
@@ -30,17 +35,19 @@ export default function Home() {
         <SubscriptionSlider />
       </div>
       
-      <BundleRecommender 
-        selectedGoal={selectedGoal}
-      />
+      <div id="bundle-selector">
+        <BundleRecommender 
+          selectedGoal={selectedGoal}
+        />
+      </div>
       
       {/* Placeholder sections for smooth scrolling */}
       <div id="seo-audit" className="min-h-screen bg-gray-100 p-20">
-        <h2 className="text-3xl font-bold text-center">SEO Audit Section (Phase 9)</h2>
+        <h2 className="text-3xl font-bold text-center">SEO Audit Section (Phase 11)</h2>
       </div>
       
       <div id="blog-generator" className="min-h-screen bg-gray-200 p-20">
-        <h2 className="text-3xl font-bold text-center">Blog Generator Section (Phase 10)</h2>
+        <h2 className="text-3xl font-bold text-center">Blog Generator Section (Phase 12)</h2>
       </div>
     </>
   );
